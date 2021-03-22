@@ -1,0 +1,64 @@
+drop justcalldb;
+
+create database justcalldb;
+
+use justcalldb;
+
+create table register
+(
+Username varchar(20) primary key,
+Password varchar(20),
+Name varchar(30),
+Gender varchar(10),
+DOB Date,
+Address varchar(50),
+State varchar(50),
+City varchar(50),
+PinCode varchar(15),
+Mobile varchar(15),
+Role varchar(10),
+Status  varchar(10) default 'Unblock'
+);
+
+
+insert into register values('Admin','Admin','Bhupinder','Male','1984-1-3','WZ-1642','Delhi','New Delhi','110034','9958168310','Admin');
+insert into register values('User','User','Sumit','Male','1994-11-23','WZ-1642','Delhi','New Delhi','110034','9958168310','User');
+
+drop table businesstb;
+create table businesstb
+(
+	BussID int primary key AUTO_INCREMENT,
+	Username varchar(30),
+	Business varchar(30),
+	Category varchar(30),
+	OpenTime time,
+	CloseTime time,
+	Closing varchar(30),
+	Description varchar(200),
+	Mobile varchar(30),
+	ContactPerson varchar(30),
+	State varchar(30),
+	City varchar(30),
+	Status varchar(50)
+);
+
+
+
+
+insert into businesstb(Username,Business,Category,OpenTime,CloseTime,Description,Mobile,ContactPerson,State,City,Image)
+values('User','Samsung S6','Mobile','14:25','14:25','Description','1111111111','Bhupinder','Delhi','New Delhi','Not Available');
+
+insert into businesstb(Username,Product,Category,OpenTime,CloseTime,Description,Mobile,ContactPerson,State,City,Image)
+values('User','Micromax Gold','Mobile','14:25','14:25','Description','1111111111','Bhupinder','Delhi','New Delhi','Not Available');
+
+insert into businesstb(Username,Product,Category,OpenTime,CloseTime,Description,Mobile,ContactPerson,State,City,Image)
+values('User','Videocon TV BFM-350','TV','14:25','14:25','Description','1111111111','Bhupinder','Delhi','New Delhi','Not Available');
+
+insert into businesstb(Username,Product,Category,OpenTime,CloseTime,Description,Mobile,ContactPerson,State,City,Image)
+values('User','HP pavilion','Laptop','14:25','14:25','Description','1111111111','Bhupinder','Delhi','New Delhi','Not Available');
+
+insert into businesstb(Username,Business,Category,OpenTime,CloseTime,Description,Mobile,ContactPerson,State,City,Image)
+values('User','Canon ps-3200','Camera','14:25','14:25','Description','1111111111','Bhupinder','Delhi','New Delhi','Not Available');
+
+
+select time_format(timedemo,'%r') from demo;
